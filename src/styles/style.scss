@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap");
+
+$bg: #f2f4f5;
+$t: #313131;
+$s: #fff;
+
+html {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  max-width: 400px;
+  margin: 0 auto;
+  letter-spacing: 0.3px;
+  background-color: $bg;
+  color: $t;
+}
+
+.header {
+  padding: 40px 25px;
+
+  &__title {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    opacity: 0.6;
+    margin-top: 10px;
+  }
+}
+
+.next {
+  padding: 25px;
+  margin: 25px;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 70px;
+  grid-template-areas:
+    "name map"
+    "date country";
+  background-color: $s;
+  border-radius: 5px;
+
+  &__name {
+    grid-area: name;
+    justify-self: center;
+  }
+
+  &__date {
+    grid-area: date;
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.6;
+  }
+
+  &__country {
+    grid-area: country;
+    justify-self: end;
+    font-size: 14px;
+    opacity: 0.3;
+  }
+
+  &__map {
+    width: 100%;
+    grid-area: map;
+    opacity: 0.8;
+    justify-self: end;
+  }
+}
+
+.list {
+  padding: 40px 25px;
+
+  &__title {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  &__more {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    transition: 0.6s ease;
+
+    &--active {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      transition: 0.6s ease;
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.item {
+  padding: 10px 20px;
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: 0fr 0.2fr 0.5fr 0.4fr 0fr;
+  background-color: $s;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 14px;
+
+  &__position {
+    margin-right: 20px;
+    font-weight: 400;
+    opacity: 0.6;
+  }
+
+  &__logo {
+    width: 50%;
+    margin-right: 20px;
+  }
+
+  &__points {
+    justify-self: end;
+    font-weight: 400;
+    opacity: 0.6;
+  }
+}

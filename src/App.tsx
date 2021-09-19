@@ -1,13 +1,19 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { Drivers } from "./Components/Drivers";
+import Header from "./Components/Header";
+import Next from "./Components/Next";
+import { Teams } from "./Components/Teams";
+import "./styles/style.css";
 
-function App() {
-  
+const App: React.FC = () => {
   return (
-    <div className="App">
-     
+    <div>
+      <Header />
+      <Next />
+      <Drivers />
+      <Teams />
     </div>
   );
-}
+};
 
 export default App;
