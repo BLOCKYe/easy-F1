@@ -1,10 +1,10 @@
 import React from "react";
 
 interface Props {
-  position: number;
-  logo: string;
+  position?: string;
+  logo?: string;
   name: string;
-  points: number;
+  points?: string;
 }
 
 export const Item: React.FC<Props> = (props) => {

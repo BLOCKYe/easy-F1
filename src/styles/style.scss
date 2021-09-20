@@ -16,7 +16,7 @@ html {
 }
 
 .header {
-  padding: 40px 25px;
+  padding: 40px 15px;
 
   &__title {
     font-size: 30px;
@@ -39,7 +39,7 @@ html {
 
 .next {
   padding: 25px;
-  margin: 25px;
+  margin: 15px;
   margin-bottom: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -47,7 +47,8 @@ html {
   grid-template-areas:
     "name map"
     "date country";
-  background-color: $s;
+  background-color: $bg;
+  box-shadow: rgba(17, 12, 46, 0.1) 0px 48px 100px 0px;
   border-radius: 5px;
 
   &__name {
@@ -78,7 +79,7 @@ html {
 }
 
 .list {
-  padding: 40px 25px;
+  padding: 40px 15px;
 
   &__title {
     font-size: 14px;
@@ -116,8 +117,9 @@ html {
   padding: 10px 20px;
   margin: 10px 0;
   display: grid;
-  grid-template-columns: 0fr 0.2fr 0.5fr 0.4fr 0fr;
-  background-color: $s;
+  grid-template-columns: 0fr 0.2fr 0.6fr 0.4fr 0fr;
+  background-color: $bg;
+  box-shadow: rgba(17, 12, 46, 0.1) 0px 48px 100px 0px;
   align-items: center;
   border-radius: 5px;
   font-size: 14px;
@@ -135,7 +137,6 @@ html {
 
   &__points {
     justify-self: end;
-    font-weight: 400;
-    opacity: 0.6;
+    font-weight: bold;
   }
 }
