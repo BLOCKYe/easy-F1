@@ -1,8 +1,7 @@
 import React from "react";
-import { Drivers } from "./Components/Drivers";
 import Header from "./Components/Header";
 import Next from "./Components/Next";
-import { Teams } from "./Components/Teams";
+import { Standings } from "./Components/Standings";
 import "./styles/style.css";
 
 const App: React.FC = () => {
@@ -10,8 +9,7 @@ const App: React.FC = () => {
     <div>
       <Header />
       <Next />
-      <Drivers />
-      <Teams />
+      <Standings />
     </div>
   );
 };
