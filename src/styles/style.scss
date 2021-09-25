@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap");
 
-$bg: #f9faff;
+$bg: #fff;
 $t: #24232a;
 $c: #1f5eff;
 $cl: #e9efff;
@@ -47,9 +47,9 @@ html {
   &__card {
     margin-top: 20px;
     padding: 20px;
-    background-color: $cl;
-    border-left: solid 2px $c;
+    border: 2px solid $dl;
     color: $t;
+    border-radius: 15px;
   }
 
   &__name {
@@ -92,10 +92,12 @@ html {
     font-size: 14px;
     color: $d;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 15px;
     text-align: center;
     display: flex;
     align-items: center;
+    transition: .3s ease;
+    background-color: $bg;
 
     &--active {
       background-color: $cl;
@@ -109,9 +111,9 @@ html {
   margin: 10px 0;
   display: grid;
   grid-template-columns: 0fr 0.6fr 0.4fr 0fr;
-  background-color: $cl;
+  border: 2px solid $dl;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 14px;
 
   &__position {

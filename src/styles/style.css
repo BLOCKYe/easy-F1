@@ -6,7 +6,7 @@ html {
   max-width: 400px;
   margin: 0 auto;
   letter-spacing: 0.3px;
-  background-color: #f9faff;
+  background-color: #fff;
   color: #24232a;
 }
 
@@ -45,9 +45,9 @@ html {
 .next__card {
   margin-top: 20px;
   padding: 20px;
-  background-color: #e9efff;
-  border-left: solid 2px #1f5eff;
+  border: 2px solid #eceef5;
   color: #24232a;
+  border-radius: 15px;
 }
 
 .next__name {
@@ -96,7 +96,7 @@ html {
   font-size: 14px;
   color: #7b849c;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 15px;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -104,6 +104,9 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  background-color: #fff;
 }
 
 .standings__type--active {
@@ -118,11 +121,11 @@ html {
   display: grid;
   -ms-grid-columns: 0fr 0.6fr 0.4fr 0fr;
       grid-template-columns: 0fr 0.6fr 0.4fr 0fr;
-  background-color: #e9efff;
+  border: 2px solid #eceef5;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 14px;
 }
 

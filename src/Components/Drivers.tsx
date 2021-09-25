@@ -1,32 +1,25 @@
-import React, { useState, useEffect } from "react";
-import { Item } from "./Item";
+import React from 'react';
+import { Item } from './Item';
 
-export const Drivers: React.FC = () => {
-  const [drivers, setdrivers] = useState([
-    { position: "", points: "", Driver: { familyName: "" } },
-  ]);
+type Props = {
+    drivers: {
+        position: string;
+        Driver: { familyName: string };
+        points: string;
+    }[];
+};
 
-  useEffect(() => {
-    fetch("http://ergast.com/api/f1/current/driverStandings.json")
-      .then((response) => response.json())
-      .then((result) => {
-        setdrivers(
-          result.MRData.StandingsTable.StandingsLists[0].DriverStandings
-        );
-      })
-      .catch((error) => console.log("error", error));
-  }, []);
-
-  return (
-    <div className="list">
-      {[...drivers].map((e) => (
-        <Item
-          key={e.position}
-          position={e.position}
-          name={e.Driver.familyName}
-          points={e.points}
-        />
-      ))}
-    </div>
-  );
+export const Drivers: React.FC<Props> = (props) => {
+    return (
+        <div className="list">
+            {[...props.drivers].map((e) => (
+                <Item
+                    key={e.position}
+                    position={e.position}
+                    name={e.Driver.familyName}
+                    points={e.points}
+                />
+            ))}
+        </div>
+    );
 };
