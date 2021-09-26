@@ -7,18 +7,30 @@ import { Teams } from './Teams';
 export const Standings: React.FC = () => {
     const [driversList, setdriversList] = useState<boolean>(true);
     const [teamsList, setteamsList] = useState<boolean>(false);
+    const [checkData, setCheckData] = useState<boolean>(false);
     const [drivers, setdrivers] = useState([
-        { position: '', Driver: { familyName: '' }, points: '' },
+        {
+            position: '',
+            wins: '',
+            Driver: { familyName: '', nationality: '' },
+            points: '',
+        },
     ]);
 
     const [teams, setteams] = useState([
-        { position: '', Constructor: { name: '' }, points: '' },
+        {
+            position: '',
+            wins: '',
+            Constructor: { name: '', nationality: '' },
+            points: '',
+        },
     ]);
 
     useEffect(() => {
         fetch('http://ergast.com/api/f1/current/driverStandings.json')
             .then((response) => response.json())
             .then((result) => {
+               // setCheckData(true);
                 setdrivers(
                     result.MRData.StandingsTable.StandingsLists[0]
                         .DriverStandings
@@ -72,15 +84,21 @@ export const Standings: React.FC = () => {
                 </div>
             </div>
 
-            {driversList && (
-                <div className="standings__list">
-                    <Drivers drivers={drivers} />
-                </div>
-            )}
+            {!checkData && <div className="standings__info">Loading data...</div>}
 
-            {teamsList && (
-                <div className="standings__list">
-                    <Teams teams={teams} />
+            {checkData && (
+                <div className="standings__module">
+                    {driversList && (
+                        <div className="standings__list">
+                            <Drivers drivers={drivers} />
+                        </div>
+                    )}
+
+                    {teamsList && (
+                        <div className="standings__list">
+                            <Teams teams={teams} />
+                        </div>
+                    )}
                 </div>
             )}
         </div>

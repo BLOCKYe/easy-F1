@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');
 
 $bg: #fff;
 $t: #24232a;
@@ -8,121 +8,165 @@ $d: #7b849c;
 $dl: #eceef5;
 
 html {
-  font-family: "Open Sans", sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  max-width: 400px;
-  margin: 0 auto;
-  letter-spacing: 0.3px;
-  background-color: $bg;
-  color: $t;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 800px;
+    margin: 0 auto;
+    letter-spacing: 0.3px;
+    background-color: $bg;
+    color: $t;
 }
 
 .header {
-  padding: 40px 30px;
+    padding: 40px 30px;
 
-  &__title {
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-  }
+    &__title {
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+    }
 
-  &__subtitle {
-    font-weight: 400;
-    opacity: 0.6;
-    font-size: 14px;
-    columns: $d;
-  }
+    &__subtitle {
+        font-weight: 400;
+        opacity: 0.6;
+        font-size: 14px;
+        columns: $d;
+    }
 }
 
 .next {
-  margin: 30px;
-  margin-bottom: 40px;
+    margin: 30px;
+    margin-bottom: 40px;
 
-  &__title {
-    color: $d;
-    font-size: 14px;
-  }
+    &__title {
+        color: $d;
+        font-size: 14px;
+    }
 
-  &__card {
-    margin-top: 20px;
-    padding: 20px;
-    border: 2px solid $dl;
-    color: $t;
-    border-radius: 15px;
-  }
+    &__card {
+        margin-top: 20px;
+        padding: 20px;
+        border: 2px solid $dl;
+        color: $t;
+        border-radius: 15px;
+    }
 
-  &__name {
-    margin-top: 10px;
-  }
+    &__name {
+        margin-top: 10px;
+    }
 
-  &__date {
-    font-size: 14px;
-    font-weight: 400;
-    color: $d;
-  }
+    &__date {
+        font-size: 14px;
+        font-weight: 400;
+        color: $d;
+    }
 }
 
 .list {
-  padding-top: 20px;
+    padding-top: 20px;
 }
 
 .standings {
-  padding: 40px 30px;
+    padding: 40px 30px;
 
-  &__title {
-    font-size: 14px;
-    color: $d;
-  }
-
-  &__menu {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 20px;
-  }
-
-  &__icon {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-  }
-
-  &__type {
-    justify-self: center;
-    font-size: 14px;
-    color: $d;
-    padding: 10px 20px;
-    border-radius: 15px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    transition: .3s ease;
-    background-color: $bg;
-
-    &--active {
-      background-color: $cl;
-      color: $c;
+    &__title {
+        font-size: 14px;
+        color: $d;
     }
-  }
+
+    &__menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+        margin-top: 20px;
+        max-width: 400px;
+    }
+
+    &__info {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: $c;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+    }
+
+    &__type {
+        justify-self: center;
+        font-size: 14px;
+        color: $d;
+        padding: 10px 20px;
+        border-radius: 15px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        transition: 0.3s ease;
+        background-color: $bg;
+
+        &--active {
+            background-color: $cl;
+            color: $c;
+        }
+    }
 }
 
 .item {
-  padding: 10px 20px;
-  margin: 10px 0;
-  display: grid;
-  grid-template-columns: 0fr 0.6fr 0.4fr 0fr;
-  border: 2px solid $dl;
-  align-items: center;
-  border-radius: 10px;
-  font-size: 14px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 0fr 0.6fr 0.4fr;
+    grid-template-areas:
+        'position name points'
+        'extended extended extended';
+    border: 2px solid $dl;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
 
-  &__position {
-    margin-right: 20px;
-    color: $d;
-  }
+    &__position {
+        margin-right: 20px;
+        color: $d;
+    }
 
-  &__points {
-    justify-self: end;
-    color: $d;
-  }
+    &__points {
+        justify-self: end;
+        color: $d;
+    }
+
+    &__extended {
+        grid-area: extended;
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        font-size: 12px;
+        font-weight: 400;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 340px) {
+    .next {
+        margin: 30px 5px;
+    }
+
+    .standings {
+        padding: 30px 5px;
+
+        &__type {
+            font-size: 12px;
+        }
+    }
+}
+
+@media (min-width: 767px) {
+    .standings {
+        &__type {
+            cursor: pointer;
+        }
+    }
 }

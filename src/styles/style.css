@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap");
 html {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   font-weight: bold;
-  max-width: 400px;
+  max-width: 800px;
   margin: 0 auto;
   letter-spacing: 0.3px;
   background-color: #fff;
@@ -78,7 +78,16 @@ html {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
   margin-top: 20px;
+  max-width: 400px;
+}
+
+.standings__info {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #1f5eff;
 }
 
 .standings__icon {
@@ -104,8 +113,8 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
   background-color: #fff;
 }
 
@@ -119,14 +128,16 @@ html {
   margin: 10px 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 0fr 0.6fr 0.4fr 0fr;
-      grid-template-columns: 0fr 0.6fr 0.4fr 0fr;
+  -ms-grid-columns: 0fr 0.6fr 0.4fr;
+      grid-template-columns: 0fr 0.6fr 0.4fr;
+      grid-template-areas: 'position name points' 'extended extended extended';
   border: 2px solid #eceef5;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   border-radius: 10px;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .item__position {
@@ -138,5 +149,37 @@ html {
   -ms-grid-column-align: end;
       justify-self: end;
   color: #7b849c;
+}
+
+.item__extended {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: extended;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 60px 1fr;
+      grid-template-columns: 60px 1fr;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+@media (max-width: 340px) {
+  .next {
+    margin: 30px 5px;
+  }
+  .standings {
+    padding: 30px 5px;
+  }
+  .standings__type {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 767px) {
+  .standings__type {
+    cursor: pointer;
+  }
 }
 /*# sourceMappingURL=style.css.map */

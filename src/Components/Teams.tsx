@@ -4,7 +4,8 @@ import { Item } from './Item';
 type Props = {
     teams: {
         position: string;
-        Constructor: { name: string };
+        wins: string;
+        Constructor: { name: string; nationality: string };
         points: string;
     }[];
 };
@@ -18,6 +19,8 @@ export const Teams: React.FC<Props> = (props) => {
                     position={e.position}
                     name={e.Constructor.name}
                     points={e.points}
+                    wins={e.wins}
+                    nationality={e.Constructor.nationality}
                 />
             ))}
         </div>
