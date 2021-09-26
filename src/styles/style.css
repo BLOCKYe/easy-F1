@@ -1,4 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap");
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 html {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
@@ -12,6 +29,11 @@ html {
 
 .header {
   padding: 40px 30px;
+  opacity: 0;
+  -webkit-animation: 0.6s fadeIn forwards;
+          animation: 0.6s fadeIn forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
 }
 
 .header__title {
@@ -35,11 +57,30 @@ html {
 .next {
   margin: 30px;
   margin-bottom: 40px;
+  max-width: 400px;
+  opacity: 0;
+  -webkit-animation: 0.6s fadeIn forwards;
+          animation: 0.6s fadeIn forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 .next__title {
   color: #7b849c;
   font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.next__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 10px;
 }
 
 .next__card {
@@ -66,11 +107,19 @@ html {
 
 .standings {
   padding: 40px 30px;
+  -webkit-animation: 0.6s fadeIn forwards;
+          animation: 0.6s fadeIn forwards;
+  opacity: 0;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
 }
 
 .standings__title {
   font-size: 14px;
   color: #7b849c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .standings__menu {
@@ -87,7 +136,7 @@ html {
   text-align: center;
   margin-top: 20px;
   font-size: 14px;
-  color: #1f5eff;
+  opacity: 0.3;
 }
 
 .standings__icon {
@@ -135,9 +184,11 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 10px;
+  border-radius: 0px 10px 10px 0px;
   font-size: 14px;
   cursor: pointer;
+  -webkit-animation: 0.6s fadeIn forwards;
+          animation: 0.6s fadeIn forwards;
 }
 
 .item__position {
@@ -163,6 +214,48 @@ html {
   font-size: 12px;
   font-weight: 400;
   margin-top: 10px;
+  -webkit-animation: 0.3s fadeIn forwards;
+          animation: 0.3s fadeIn forwards;
+}
+
+.mercedes {
+  border-left: 3px solid #00d2be;
+}
+
+.red_bull {
+  border-left: 3px solid #0600ef;
+}
+
+.mclaren {
+  border-left: 3px solid #ff9800;
+}
+
+.ferrari {
+  border-left: 3px solid #dc0000;
+}
+
+.alpine {
+  border-left: 3px solid #0090ff;
+}
+
+.alphatauri {
+  border-left: 3px solid #2b4562;
+}
+
+.aston_martin {
+  border-left: 3px solid #006f62;
+}
+
+.williams {
+  border-left: 3px solid #005aff;
+}
+
+.alfa {
+  border-left: 3px solid #900000;
+}
+
+.haas {
+  border-left: 3px solid #e7e7e7;
 }
 
 @media (max-width: 340px) {

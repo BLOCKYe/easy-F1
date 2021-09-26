@@ -7,6 +7,16 @@ $cl: #e9efff;
 $d: #7b849c;
 $dl: #eceef5;
 
+// animations
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 html {
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
@@ -20,6 +30,9 @@ html {
 
 .header {
     padding: 40px 30px;
+    opacity: 0;
+    animation: 0.6s fadeIn forwards;
+    animation-delay: 0.5s;
 
     &__title {
         font-size: 30px;
@@ -38,10 +51,21 @@ html {
 .next {
     margin: 30px;
     margin-bottom: 40px;
+    max-width: 400px;
+    opacity: 0;
+    animation: 0.6s fadeIn forwards;
+    animation-delay: 1s;
 
     &__title {
         color: $d;
         font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        display: flex;
+        margin-right: 10px;
     }
 
     &__card {
@@ -69,10 +93,14 @@ html {
 
 .standings {
     padding: 40px 30px;
+    animation: 0.6s fadeIn forwards;
+    opacity: 0;
+    animation-delay: 1.2s;
 
     &__title {
         font-size: 14px;
         color: $d;
+        display: flex;
     }
 
     &__menu {
@@ -87,7 +115,7 @@ html {
         text-align: center;
         margin-top: 20px;
         font-size: 14px;
-        color: $c;
+        opacity: 0.3;
     }
 
     &__icon {
@@ -125,9 +153,10 @@ html {
         'extended extended extended';
     border: 2px solid $dl;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 0px 10px 10px 0px;
     font-size: 14px;
     cursor: pointer;
+    animation: 0.6s fadeIn forwards;
 
     &__position {
         margin-right: 20px;
@@ -146,7 +175,49 @@ html {
         font-size: 12px;
         font-weight: 400;
         margin-top: 10px;
+        animation: 0.3s fadeIn forwards;
     }
+}
+
+// teams
+.mercedes {
+    border-left: 3px solid #00d2be;
+}
+
+.red_bull {
+    border-left: 3px solid #0600ef;
+}
+
+.mclaren {
+    border-left: 3px solid #ff9800;
+}
+
+.ferrari {
+    border-left: 3px solid #dc0000;
+}
+
+.alpine {
+    border-left: 3px solid #0090ff;
+}
+
+.alphatauri {
+    border-left: 3px solid #2b4562;
+}
+
+.aston_martin {
+    border-left: 3px solid #006f62;
+}
+
+.williams {
+    border-left: 3px solid #005aff;
+}
+
+.alfa {
+    border-left: 3px solid #900000;
+}
+
+.haas {
+    border-left: 3px solid rgb(231, 231, 231);
 }
 
 @media (max-width: 340px) {

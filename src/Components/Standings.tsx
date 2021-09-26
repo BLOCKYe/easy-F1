@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GiFullMotorcycleHelmet } from 'react-icons/gi';
+import { FaListUl } from 'react-icons/fa';
 import { IoMdHammer } from 'react-icons/io';
 import { Drivers } from './Drivers';
 import { Teams } from './Teams';
@@ -14,6 +15,7 @@ export const Standings: React.FC = () => {
             wins: '',
             Driver: { familyName: '', nationality: '' },
             points: '',
+            Constructors: [{ constructorId: '' }],
         },
     ]);
 
@@ -21,7 +23,7 @@ export const Standings: React.FC = () => {
         {
             position: '',
             wins: '',
-            Constructor: { name: '', nationality: '' },
+            Constructor: { name: '', nationality: '', constructorId: '' },
             points: '',
         },
     ]);
@@ -30,7 +32,7 @@ export const Standings: React.FC = () => {
         fetch('http://ergast.com/api/f1/current/driverStandings.json')
             .then((response) => response.json())
             .then((result) => {
-               // setCheckData(true);
+                setCheckData(true);
                 setdrivers(
                     result.MRData.StandingsTable.StandingsLists[0]
                         .DriverStandings
@@ -51,7 +53,12 @@ export const Standings: React.FC = () => {
 
     return (
         <div className="standings">
-            <div className="standings__title">Standings</div>
+            <div className="standings__title">
+                <div className="standings__icon">
+                    <FaListUl />
+                </div>
+                Standings
+            </div>
             <div className="standings__menu">
                 <div
                     onClick={() => {
@@ -84,7 +91,9 @@ export const Standings: React.FC = () => {
                 </div>
             </div>
 
-            {!checkData && <div className="standings__info">Loading data...</div>}
+            {!checkData && (
+                <div className="standings__info">Loading data...</div>
+            )}
 
             {checkData && (
                 <div className="standings__module">

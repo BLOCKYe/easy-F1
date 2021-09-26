@@ -7,12 +7,12 @@ type Props = {
         wins: string;
         Driver: { familyName: string; nationality: string };
         points: string;
+        Constructors: { constructorId: string }[];
     }[];
 };
 
 export const Drivers: React.FC<Props> = (props) => {
     return (
-        
         <div className="list">
             {[...props.drivers].map((e) => (
                 <Item
@@ -22,6 +22,7 @@ export const Drivers: React.FC<Props> = (props) => {
                     points={e.points}
                     wins={e.wins}
                     nationality={e.Driver.nationality}
+                    constructorId={e.Constructors[0].constructorId}
                 />
             ))}
         </div>

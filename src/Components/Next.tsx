@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FaFlagCheckered } from 'react-icons/fa';
 
 const Next: React.FC = () => {
     const [date, setdate] = useState('');
@@ -31,7 +32,12 @@ const Next: React.FC = () => {
 
     return (
         <div className="next">
-            <div className="next__title">Next race</div>
+            <div className="next__title">
+                <div className="next__icon">
+                    <FaFlagCheckered />
+                </div>
+                Next race
+            </div>
             <div className="next__card">
                 <div className="next__date">{date}</div>
                 <div className="next__name">{name}</div>

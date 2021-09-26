@@ -5,7 +5,11 @@ type Props = {
     teams: {
         position: string;
         wins: string;
-        Constructor: { name: string; nationality: string };
+        Constructor: {
+            name: string;
+            nationality: string;
+            constructorId: string;
+        };
         points: string;
     }[];
 };
@@ -21,6 +25,7 @@ export const Teams: React.FC<Props> = (props) => {
                     points={e.points}
                     wins={e.wins}
                     nationality={e.Constructor.nationality}
+                    constructorId={e.Constructor.constructorId}
                 />
             ))}
         </div>
