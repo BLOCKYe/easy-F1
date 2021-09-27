@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');
 
-$bg: #fff;
-$t: #24232a;
-$c: #1f5eff;
+$bg: #1a1a1d;
+$t: #eceef5;
+$c: #f6b458;
 $cl: #e9efff;
 $d: #7b849c;
-$dl: #eceef5;
+$dl: #24232a;
 
 // animations
 @keyframes fadeIn {
@@ -73,7 +73,8 @@ html {
         padding: 20px;
         border: 2px solid $dl;
         color: $t;
-        border-radius: 15px;
+        border-radius: 10px;
+        background: $dl;
     }
 
     &__name {
@@ -83,7 +84,7 @@ html {
     &__date {
         font-size: 14px;
         font-weight: 400;
-        color: $d;
+        color: $c;
     }
 }
 
@@ -137,7 +138,7 @@ html {
         background-color: $bg;
 
         &--active {
-            background-color: $cl;
+            background-color: $dl;
             color: $c;
         }
     }
@@ -151,7 +152,8 @@ html {
     grid-template-areas:
         'position name points'
         'extended extended extended';
-    border: 2px solid $dl;
+    //border: 2px solid $dl;
+    background: $dl;
     align-items: center;
     border-radius: 0px 10px 10px 0px;
     font-size: 14px;
@@ -219,9 +221,69 @@ html {
     border-left: 3px solid rgb(231, 231, 231);
 }
 
+.schedule {
+    padding: 40px 30px;
+    animation: 0.6s fadeIn forwards;
+    opacity: 0;
+    animation-delay: 1.4s;
+
+    &__title {
+        color: $d;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    &__icon {
+        display: flex;
+        margin-right: 10px;
+    }
+}
+
+.race {
+    padding: 10px 20px;
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 0fr 0.6fr 0.4fr;
+    grid-template-areas:
+        'round name date'
+        'extended extended extended';
+    //border: 2px solid $dl;
+    background-color: $dl;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 14px;
+    animation: 0.6s fadeIn forwards;
+
+    &__round {
+        grid-area: round;
+        margin-right: 20px;
+    }
+
+    &__name {
+        grid-area: name;
+        font-size: 12px;
+        padding-right: 10px;
+    }
+
+    &__date {
+        grid-area: date;
+        justify-self: end;
+    }
+}
+
+.pass {
+    opacity: 0.3 !important;
+}
+
 @media (max-width: 340px) {
     .next {
         margin: 30px 5px;
+    }
+
+    .schedule {
+        padding: 30px 5px;
     }
 
     .standings {

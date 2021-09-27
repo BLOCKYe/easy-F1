@@ -23,8 +23,8 @@ html {
   max-width: 800px;
   margin: 0 auto;
   letter-spacing: 0.3px;
-  background-color: #fff;
-  color: #24232a;
+  background-color: #1a1a1d;
+  color: #eceef5;
 }
 
 .header {
@@ -86,9 +86,10 @@ html {
 .next__card {
   margin-top: 20px;
   padding: 20px;
-  border: 2px solid #eceef5;
-  color: #24232a;
-  border-radius: 15px;
+  border: 2px solid #24232a;
+  color: #eceef5;
+  border-radius: 10px;
+  background: #24232a;
 }
 
 .next__name {
@@ -98,7 +99,7 @@ html {
 .next__date {
   font-size: 14px;
   font-weight: 400;
-  color: #7b849c;
+  color: #f6b458;
 }
 
 .list {
@@ -164,12 +165,12 @@ html {
           align-items: center;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
-  background-color: #fff;
+  background-color: #1a1a1d;
 }
 
 .standings__type--active {
-  background-color: #e9efff;
-  color: #1f5eff;
+  background-color: #24232a;
+  color: #f6b458;
 }
 
 .item {
@@ -180,7 +181,7 @@ html {
   -ms-grid-columns: 0fr 0.6fr 0.4fr;
       grid-template-columns: 0fr 0.6fr 0.4fr;
       grid-template-areas: 'position name points' 'extended extended extended';
-  border: 2px solid #eceef5;
+  background: #24232a;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -208,7 +209,6 @@ html {
   grid-area: extended;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 60px 1fr;
       grid-template-columns: 60px 1fr;
   font-size: 12px;
   font-weight: 400;
@@ -257,9 +257,85 @@ html {
   border-left: 3px solid #e7e7e7;
 }
 
+.schedule {
+  padding: 40px 30px;
+  -webkit-animation: 0.6s fadeIn forwards;
+          animation: 0.6s fadeIn forwards;
+  opacity: 0;
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+.schedule__title {
+  color: #7b849c;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.schedule__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 10px;
+}
+
+.race {
+  padding: 10px 20px;
+  margin: 10px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0fr 0.6fr 0.4fr;
+      grid-template-columns: 0fr 0.6fr 0.4fr;
+      grid-template-areas: 'round name date' 'extended extended extended';
+  background-color: #24232a;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  font-size: 14px;
+  -webkit-animation: 0.6s fadeIn forwards;
+          animation: 0.6s fadeIn forwards;
+}
+
+.race__round {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: round;
+  margin-right: 20px;
+}
+
+.race__name {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: name;
+  font-size: 12px;
+  padding-right: 10px;
+}
+
+.race__date {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: date;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.pass {
+  opacity: 0.3 !important;
+}
+
 @media (max-width: 340px) {
   .next {
     margin: 30px 5px;
+  }
+  .schedule {
+    padding: 30px 5px;
   }
   .standings {
     padding: 30px 5px;

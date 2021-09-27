@@ -4,16 +4,19 @@ interface Props {
     position: string;
     name: string;
     points: string;
-    wins: string;
-    nationality: string;
-    constructorId: string;
+    wins?: string;
+    nationality?: string;
+    constructorId?: string;
 }
 
 export const Item: React.FC<Props> = (props) => {
     const [showMore, setShowMore] = useState<boolean>(false);
 
     return (
-        <div onClick={() => setShowMore(!showMore)} className={`item ${props.constructorId}`}>
+        <div
+            onClick={() => setShowMore(!showMore)}
+            className={`item ${props.constructorId}`}
+        >
             <div className="item__position">{props.position}</div>
             <div className="item__name">{props.name}</div>
             <div className="item__points">{props.points}</div>
