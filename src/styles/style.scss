@@ -2,9 +2,9 @@
 
 $bg: #1a1a1d;
 $t: #eceef5;
-$c: #f6b458;
+$c: #feb95a;
 $cl: #e9efff;
-$d: #7b849c;
+$d: #bbbbbb;
 $dl: #24232a;
 
 // animations
@@ -167,6 +167,10 @@ html {
     &__points {
         justify-self: end;
         color: $d;
+    }
+
+    &__name {
+        font-size: 12px;
     }
 
     &__extended {

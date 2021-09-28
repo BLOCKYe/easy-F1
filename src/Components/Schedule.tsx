@@ -6,7 +6,7 @@ export const Schedule: React.FC = () => {
     const [races, setRaces] = useState([{ raceName: '', round: '', date: '' }]);
 
     useEffect(() => {
-        fetch('http://ergast.com/api/f1/current.json')
+        fetch('https://ergast.com/api/f1/current.json')
             .then((response) => response.json())
             .then((result) => {
                 setRaces(result.MRData.RaceTable.Races);

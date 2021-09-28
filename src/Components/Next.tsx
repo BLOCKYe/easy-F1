@@ -6,7 +6,7 @@ const Next: React.FC = () => {
     const [name, setname] = useState('');
 
     useEffect(() => {
-        fetch('http://ergast.com/api/f1/current.json')
+        fetch('https://ergast.com/api/f1/current.json')
             .then((response) => response.json())
             .then((result) => {
                 setname(

@@ -29,7 +29,7 @@ export const Standings: React.FC = () => {
     ]);
 
     useEffect(() => {
-        fetch('http://ergast.com/api/f1/current/driverStandings.json')
+        fetch('https://ergast.com/api/f1/current/driverStandings.json')
             .then((response) => response.json())
             .then((result) => {
                 setCheckData(true);
@@ -40,7 +40,7 @@ export const Standings: React.FC = () => {
             })
             .catch((error) => console.log('error', error));
 
-        fetch('http://ergast.com/api/f1/current/constructorStandings.json')
+        fetch('https://ergast.com/api/f1/current/constructorStandings.json')
             .then((response) => response.json())
             .then((result) => {
                 setteams(
