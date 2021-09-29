@@ -2,8 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import { Race } from './Race';
 
+interface Race {
+    raceName: string;
+    round: string;
+    date: string;
+}
+
 export const Schedule: React.FC = () => {
-    const [races, setRaces] = useState([{ raceName: '', round: '', date: '' }]);
+    const [races, setRaces] = useState<Race[]>([]);
 
     useEffect(() => {
         fetch('https://ergast.com/api/f1/current.json')

@@ -29,7 +29,7 @@ html {
 }
 
 .header {
-    padding: 40px 30px;
+    padding: 40px 20px;
     opacity: 0;
     animation: 0.6s fadeIn forwards;
     animation-delay: 0.5s;
@@ -49,7 +49,7 @@ html {
 }
 
 .next {
-    margin: 30px;
+    margin: 20px;
     margin-bottom: 40px;
     max-width: 400px;
     opacity: 0;
@@ -93,7 +93,7 @@ html {
 }
 
 .standings {
-    padding: 40px 30px;
+    padding: 40px 20px;
     animation: 0.6s fadeIn forwards;
     opacity: 0;
     animation-delay: 1.2s;
@@ -226,7 +226,7 @@ html {
 }
 
 .schedule {
-    padding: 40px 30px;
+    padding: 40px 20px;
     animation: 0.6s fadeIn forwards;
     opacity: 0;
     animation-delay: 1.4s;
@@ -259,6 +259,12 @@ html {
     border-radius: 10px;
     font-size: 14px;
     animation: 0.6s fadeIn forwards;
+    transition: .3s .3s;
+
+    &:active {
+        transition: .3s;
+        transform: scale(.9);
+    }
 
     &__round {
         grid-area: round;
@@ -279,6 +285,84 @@ html {
 
 .pass {
     opacity: 0.3 !important;
+}
+
+.modal {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    padding: 20px;
+    background-color: $bg;
+    overflow: auto;
+    font-size: 12px;
+    max-width: 800px;
+    color: $t;
+}
+
+.modalItem {
+    width: calc(100% - 40px);
+    background-color: $dl;
+    padding: 10px 20px;
+    margin: 10px 0;
+    display: grid;
+    border-radius: 0px 10px 10px 0px;
+    align-items: center;
+    grid-template-columns: 0fr 0.7fr 0.3fr;
+    grid-template-areas:
+        'position name time'
+        'avg avg points'
+        'lap lap gr';
+
+    &__position {
+        grid-area: position;
+        font-size: 14px;
+        color: $d;
+        margin-right: 20px;
+    }
+
+    &__name {
+        grid-area: name;
+        font-size: 14px;
+    }
+
+    &__time {
+        grid-area: time;
+        font-size: 14px;
+        color: $d;
+        justify-self: end;
+    }
+
+    &__points {
+        margin-top: 10px;
+        grid-area: points;
+        font-weight: 400;
+        border-top: 1px solid #33323a;
+        padding-top: 10px;
+    }
+
+    &__lapTime {
+        margin-top: 5px;
+        grid-area: lap;
+        font-weight: 400;
+    }
+
+    &__avg {
+        margin-top: 10px;
+        grid-area: avg;
+        font-weight: 400;
+        border-top: 1px solid #33323a;
+        padding-top: 10px;
+    }
+
+    &__grid {
+        margin-top: 5px;
+        grid-area: gr;
+        font-weight: 400;
+    }
 }
 
 @media (max-width: 340px) {
