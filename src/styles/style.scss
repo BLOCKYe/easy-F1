@@ -148,32 +148,36 @@ html {
 }
 
 .item {
-    padding: 10px 20px;
     margin: 10px 0;
     display: grid;
-    grid-template-columns: 0fr 0.6fr 0.4fr;
+    grid-template-columns: 0fr 0.8fr 0.2fr;
     grid-template-areas:
         'position name points'
-        'extended extended extended';
+        'extended extended points';
     //border: 2px solid $dl;
     background: $dl;
     align-items: center;
     border-radius: 0px 10px 10px 0px;
     font-size: 14px;
     animation: 0.6s fadeIn forwards;
+    padding: 10px 20px;
 
     &__position {
         margin-right: 20px;
         color: $d;
+        grid-area: position;
     }
 
     &__points {
         justify-self: end;
         color: $d;
+        grid-area: points;
     }
 
     &__name {
         font-size: 12px;
+        grid-area: name;
+        width: 100%;
     }
 
     &__extended {
@@ -184,6 +188,7 @@ html {
         font-weight: 400;
         margin-top: 10px;
         animation: 0.3s fadeIn forwards;
+        width: 100%;
     }
 }
 
@@ -305,12 +310,14 @@ html {
     }
 
     &__points {
+        width: 100%;
         margin-top: 10px;
         grid-area: points;
         font-weight: 400;
         border-top: 1px solid #33323a;
         padding-top: 10px;
         justify-self: end;
+        text-align: end;
     }
 
     &__lapTime {
@@ -320,6 +327,7 @@ html {
     }
 
     &__avg {
+        width: 100%;
         margin-top: 10px;
         grid-area: avg;
         font-weight: 400;
@@ -332,6 +340,7 @@ html {
         grid-area: gr;
         font-weight: 400;
         justify-self: end;
+        text-align: end;
     }
 }
 

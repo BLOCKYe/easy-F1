@@ -177,13 +177,12 @@ html {
 }
 
 .item {
-  padding: 10px 20px;
   margin: 10px 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 0fr 0.6fr 0.4fr;
-      grid-template-columns: 0fr 0.6fr 0.4fr;
-      grid-template-areas: 'position name points' 'extended extended extended';
+  -ms-grid-columns: 0fr 0.8fr 0.2fr;
+      grid-template-columns: 0fr 0.8fr 0.2fr;
+      grid-template-areas: 'position name points' 'extended extended points';
   background: #24232a;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -192,21 +191,31 @@ html {
   font-size: 14px;
   -webkit-animation: 0.6s fadeIn forwards;
           animation: 0.6s fadeIn forwards;
+  padding: 10px 20px;
 }
 
 .item__position {
   margin-right: 20px;
   color: #bbbbbb;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: position;
 }
 
 .item__points {
-  -ms-grid-column-align: end;
       justify-self: end;
   color: #bbbbbb;
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: points;
 }
 
 .item__name {
   font-size: 12px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: name;
+  width: 100%;
 }
 
 .item__extended {
@@ -222,6 +231,7 @@ html {
   margin-top: 10px;
   -webkit-animation: 0.3s fadeIn forwards;
           animation: 0.3s fadeIn forwards;
+  width: 100%;
 }
 
 .schedule {
@@ -372,6 +382,7 @@ html {
 }
 
 .modalItem__points {
+  width: 100%;
   margin-top: 10px;
   -ms-grid-row: 2;
   -ms-grid-column: 3;
@@ -381,6 +392,7 @@ html {
   padding-top: 10px;
   -ms-grid-column-align: end;
       justify-self: end;
+  text-align: end;
 }
 
 .modalItem__lapTime {
@@ -393,6 +405,7 @@ html {
 }
 
 .modalItem__avg {
+  width: 100%;
   margin-top: 10px;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
@@ -411,6 +424,7 @@ html {
   font-weight: 400;
   -ms-grid-column-align: end;
       justify-self: end;
+  text-align: end;
 }
 
 @media (max-width: 340px) {
