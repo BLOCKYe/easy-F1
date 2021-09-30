@@ -379,6 +379,8 @@ html {
   font-weight: 400;
   border-top: 1px solid #33323a;
   padding-top: 10px;
+  -ms-grid-column-align: end;
+      justify-self: end;
 }
 
 .modalItem__lapTime {
@@ -407,6 +409,8 @@ html {
   -ms-grid-column: 3;
   grid-area: gr;
   font-weight: 400;
+  -ms-grid-column-align: end;
+      justify-self: end;
 }
 
 @media (max-width: 340px) {
@@ -466,6 +470,21 @@ html {
   }
   .race {
     margin: 10px 10px;
+  }
+  .modal {
+    max-width: 1100px;
+  }
+  .modal__list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .modalItem {
+    -ms-grid-column-align: center;
+        justify-self: center;
+    margin: 10px 10px;
+    width: calc(100% - 60px);
   }
 }
 

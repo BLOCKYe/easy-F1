@@ -310,6 +310,7 @@ html {
         font-weight: 400;
         border-top: 1px solid #33323a;
         padding-top: 10px;
+        justify-self: end;
     }
 
     &__lapTime {
@@ -330,6 +331,7 @@ html {
         margin-top: 5px;
         grid-area: gr;
         font-weight: 400;
+        justify-self: end;
     }
 }
 
@@ -399,6 +401,20 @@ html {
 
     .race {
         margin: 10px 10px;
+    }
+
+    .modal {
+        max-width: 1100px;
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .modalItem {
+        justify-self: center;
+        margin: 10px 10px;
+        width: calc(100% - 60px);
     }
 }
 

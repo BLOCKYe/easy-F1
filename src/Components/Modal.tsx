@@ -18,6 +18,7 @@ interface Props {
 }
 
 export const Modal: React.FC<Props> = (props) => {
+
     // lock body scroll when modal is open
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -26,6 +27,7 @@ export const Modal: React.FC<Props> = (props) => {
             document.body.style.overflow = 'unset';
         };
     }, []);
+
     return (
         <div
             onClick={() => {
