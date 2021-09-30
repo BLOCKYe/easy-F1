@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface Props {
     position: string;
@@ -11,10 +11,17 @@ interface Props {
 
 export const Item: React.FC<Props> = (props) => {
     const [showMore, setShowMore] = useState<boolean>(false);
+    const [width, setwidth] = useState(window.innerWidth)
+
+    useEffect(() => {
+      if(width > 1100) setShowMore(true)
+    }, [])
 
     return (
         <div
-            onClick={() => setShowMore(!showMore)}
+            onClick={() => {width > 1100 ? 
+                setShowMore(true) : setShowMore(!showMore)
+            }}
             className={`item ${props.constructorId}`}
         >
             <div className="item__position">{props.position}</div>

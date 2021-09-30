@@ -20,7 +20,7 @@ html {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   font-weight: bold;
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   letter-spacing: 0.3px;
   background-color: #1a1a1d;
@@ -55,14 +55,17 @@ html {
 }
 
 .next {
-  margin: 20px;
+  margin: 0px 20px;
   margin-bottom: 40px;
-  max-width: 400px;
   opacity: 0;
   -webkit-animation: 0.6s fadeIn forwards;
           animation: 0.6s fadeIn forwards;
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
+}
+
+.next__col {
+  margin-top: 40px;
 }
 
 .next__title {
@@ -221,46 +224,6 @@ html {
           animation: 0.3s fadeIn forwards;
 }
 
-.mercedes {
-  border-left: 3px solid #00d2be;
-}
-
-.red_bull {
-  border-left: 3px solid #0600ef;
-}
-
-.mclaren {
-  border-left: 3px solid #ff9800;
-}
-
-.ferrari {
-  border-left: 3px solid #dc0000;
-}
-
-.alpine {
-  border-left: 3px solid #0090ff;
-}
-
-.alphatauri {
-  border-left: 3px solid #2b4562;
-}
-
-.aston_martin {
-  border-left: 3px solid #006f62;
-}
-
-.williams {
-  border-left: 3px solid #005aff;
-}
-
-.alfa {
-  border-left: 3px solid #900000;
-}
-
-.haas {
-  border-left: 3px solid #e7e7e7;
-}
-
 .schedule {
   padding: 40px 20px;
   -webkit-animation: 0.6s fadeIn forwards;
@@ -305,13 +268,13 @@ html {
   font-size: 14px;
   -webkit-animation: 0.6s fadeIn forwards;
           animation: 0.6s fadeIn forwards;
-  -webkit-transition: .3s .3s;
-  transition: .3s .3s;
+  -webkit-transition: 0.3s 0.3s;
+  transition: 0.3s 0.3s;
 }
 
 .race:active {
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
 }
@@ -321,6 +284,7 @@ html {
   -ms-grid-column: 1;
   grid-area: round;
   margin-right: 20px;
+  color: #bbbbbb;
 }
 
 .race__name {
@@ -337,6 +301,7 @@ html {
   grid-area: date;
   -ms-grid-column-align: end;
       justify-self: end;
+  color: #bbbbbb;
 }
 
 .pass {
@@ -356,8 +321,12 @@ html {
   background-color: #1a1a1d;
   overflow: auto;
   font-size: 12px;
-  max-width: 800px;
+  max-width: 600px;
   color: #eceef5;
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
 }
 
 .modalItem {
@@ -459,8 +428,84 @@ html {
   .standings__type {
     cursor: pointer;
   }
-  .item {
+  .race {
     cursor: pointer;
   }
+}
+
+@media (min-width: 1100px) {
+  html {
+    max-width: 1100px;
+  }
+  .next {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+  .next__col {
+    width: 90%;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  .standings .list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .item {
+    margin: 10px 10px;
+  }
+  .shedule__list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .race {
+    margin: 10px 10px;
+  }
+}
+
+.mercedes {
+  border-left: 3px solid #00d2be;
+}
+
+.red_bull {
+  border-left: 3px solid #0600ef;
+}
+
+.mclaren {
+  border-left: 3px solid #ff9800;
+}
+
+.ferrari {
+  border-left: 3px solid #dc0000;
+}
+
+.alpine {
+  border-left: 3px solid #0090ff;
+}
+
+.alphatauri {
+  border-left: 3px solid #2b4562;
+}
+
+.aston_martin {
+  border-left: 3px solid #006f62;
+}
+
+.williams {
+  border-left: 3px solid #005aff;
+}
+
+.alfa {
+  border-left: 3px solid #900000;
+}
+
+.haas {
+  border-left: 3px solid #e7e7e7;
 }
 /*# sourceMappingURL=style.css.map */

@@ -21,7 +21,7 @@ html {
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     font-weight: bold;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
     letter-spacing: 0.3px;
     background-color: $bg;
@@ -49,12 +49,15 @@ html {
 }
 
 .next {
-    margin: 20px;
+    margin: 0px 20px;
     margin-bottom: 40px;
-    max-width: 400px;
     opacity: 0;
     animation: 0.6s fadeIn forwards;
     animation-delay: 1s;
+
+    &__col {
+        margin-top: 40px;
+    }
 
     &__title {
         color: $d;
@@ -184,47 +187,6 @@ html {
     }
 }
 
-// teams
-.mercedes {
-    border-left: 3px solid #00d2be;
-}
-
-.red_bull {
-    border-left: 3px solid #0600ef;
-}
-
-.mclaren {
-    border-left: 3px solid #ff9800;
-}
-
-.ferrari {
-    border-left: 3px solid #dc0000;
-}
-
-.alpine {
-    border-left: 3px solid #0090ff;
-}
-
-.alphatauri {
-    border-left: 3px solid #2b4562;
-}
-
-.aston_martin {
-    border-left: 3px solid #006f62;
-}
-
-.williams {
-    border-left: 3px solid #005aff;
-}
-
-.alfa {
-    border-left: 3px solid #900000;
-}
-
-.haas {
-    border-left: 3px solid rgb(231, 231, 231);
-}
-
 .schedule {
     padding: 40px 20px;
     animation: 0.6s fadeIn forwards;
@@ -259,16 +221,17 @@ html {
     border-radius: 10px;
     font-size: 14px;
     animation: 0.6s fadeIn forwards;
-    transition: .3s .3s;
+    transition: 0.3s 0.3s;
 
     &:active {
-        transition: .3s;
-        transform: scale(.9);
+        transition: 0.3s;
+        transform: scale(0.9);
     }
 
     &__round {
         grid-area: round;
         margin-right: 20px;
+        color: $d;
     }
 
     &__name {
@@ -280,6 +243,7 @@ html {
     &__date {
         grid-area: date;
         justify-self: end;
+        color: $d;
     }
 }
 
@@ -299,8 +263,12 @@ html {
     background-color: $bg;
     overflow: auto;
     font-size: 12px;
-    max-width: 800px;
+    max-width: 600px;
     color: $t;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .modalItem {
@@ -390,7 +358,87 @@ html {
         }
     }
 
-    .item {
+    .race {
         cursor: pointer;
     }
+}
+
+@media (min-width: 1100px) {
+    html {
+        max-width: 1100px;
+    }
+
+    .next {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+
+        &__col {
+            width: 90%;
+            justify-self: center;
+        }
+    }
+
+    .standings {
+        .list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .item {
+        margin: 10px 10px;
+    }
+
+    .shedule {
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .race {
+        margin: 10px 10px;
+    }
+}
+
+// teams
+.mercedes {
+    border-left: 3px solid #00d2be;
+}
+
+.red_bull {
+    border-left: 3px solid #0600ef;
+}
+
+.mclaren {
+    border-left: 3px solid #ff9800;
+}
+
+.ferrari {
+    border-left: 3px solid #dc0000;
+}
+
+.alpine {
+    border-left: 3px solid #0090ff;
+}
+
+.alphatauri {
+    border-left: 3px solid #2b4562;
+}
+
+.aston_martin {
+    border-left: 3px solid #006f62;
+}
+
+.williams {
+    border-left: 3px solid #005aff;
+}
+
+.alfa {
+    border-left: 3px solid #900000;
+}
+
+.haas {
+    border-left: 3px solid rgb(231, 231, 231);
 }
