@@ -8,9 +8,9 @@ import { Teams } from './Teams';
 interface Driver {
     position: string;
     wins: string;
-    Driver: { familyName: string; nationality: string };
+    Driver: { familyName: string; nationality: string, dateOfBirth: string };
     points: string;
-    Constructors: { constructorId: string }[];
+    Constructors: { constructorId: string, name: string }[];
 }
 
 interface Team {

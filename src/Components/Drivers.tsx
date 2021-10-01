@@ -5,9 +5,9 @@ type Props = {
     drivers: {
         position: string;
         wins: string;
-        Driver: { familyName: string; nationality: string };
+        Driver: { familyName: string; nationality: string, dateOfBirth: string };
         points: string;
-        Constructors: { constructorId: string }[];
+        Constructors: { constructorId: string, name: string }[];
     }[];
 };
 
@@ -23,6 +23,9 @@ export const Drivers: React.FC<Props> = (props) => {
                     wins={e.wins}
                     nationality={e.Driver.nationality}
                     constructorId={e.Constructors[0].constructorId}
+                    dateOfBirth={e.Driver.dateOfBirth}
+                    teamName={e.Constructors[0].name}
+                    forDrivers={true}
                 />
             ))}
         </div>

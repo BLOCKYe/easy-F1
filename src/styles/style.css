@@ -225,13 +225,22 @@ html {
   grid-area: extended;
   display: -ms-grid;
   display: grid;
+      grid-template-columns: 'one two';
       grid-template-columns: 60px 1fr;
   font-size: 12px;
   font-weight: 400;
-  margin-top: 10px;
+  margin-top: 5px;
   -webkit-animation: 0.3s fadeIn forwards;
           animation: 0.3s fadeIn forwards;
   width: 100%;
+}
+
+.item__wins {
+  margin-top: 5px;
+}
+
+.item__nationality {
+  margin-top: 5px;
 }
 
 .schedule {
@@ -446,7 +455,7 @@ html {
   .standings__type {
     cursor: pointer;
   }
-  .race {
+  .pass {
     cursor: pointer;
   }
 }

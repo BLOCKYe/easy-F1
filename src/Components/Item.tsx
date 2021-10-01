@@ -4,23 +4,38 @@ interface Props {
     position: string;
     name: string;
     points: string;
-    wins?: string;
-    nationality?: string;
-    constructorId?: string;
+    wins: string;
+    nationality: string;
+    constructorId: string;
+    dateOfBirth?: string;
+    teamName?: string;
+    forDrivers?: boolean;
 }
 
 export const Item: React.FC<Props> = (props) => {
     const [showMore, setShowMore] = useState<boolean>(false);
-    const [width, setwidth] = useState(window.innerWidth)
+    const [width] = useState(window.innerWidth);
 
     useEffect(() => {
-      if(width > 1100) setShowMore(true)
-    }, [])
+        if (width > 1100) setShowMore(true);
+    }, []);
+
+    const setAge = (ageString: any) => {
+        var today = new Date();
+        var birthDate = new Date(ageString);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age;
+    };
 
     return (
         <div
-            onClick={() => {width > 1100 ? 
-                setShowMore(true) : setShowMore(!showMore)
+            onClick={() => {
+                setAge(props.dateOfBirth);
+                width > 1100 ? setShowMore(true) : setShowMore(!showMore);
             }}
             className={`item ${props.constructorId}`}
         >
@@ -36,6 +51,18 @@ export const Item: React.FC<Props> = (props) => {
                     <div className="item__nationality">
                         Nationality: <strong>{props.nationality}</strong>
                     </div>
+
+                    {props.forDrivers && (
+                        <div className="item__wins">
+                            Age: <strong>{setAge(props.dateOfBirth)}</strong>
+                        </div>
+                    )}
+
+                    {props.forDrivers && (
+                        <div className="item__nationality">
+                            Team: <strong>{props.teamName}</strong>
+                        </div>
+                    )}
                 </div>
             )}
         </div>
