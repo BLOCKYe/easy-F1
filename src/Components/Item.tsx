@@ -21,10 +21,10 @@ export const Item: React.FC<Props> = (props) => {
     }, []);
 
     const setAge = (ageString: any) => {
-        var today = new Date();
-        var birthDate = new Date(ageString);
-        var age = today.getFullYear() - birthDate.getFullYear();
-        var m = today.getMonth() - birthDate.getMonth();
+        const today = new Date();
+        const birthDate = new Date(ageString);
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const m = today.getMonth() - birthDate.getMonth();
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
             age--;
         }
