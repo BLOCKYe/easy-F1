@@ -287,15 +287,6 @@ html {
   font-size: 14px;
   -webkit-animation: 0.6s fadeIn forwards;
           animation: 0.6s fadeIn forwards;
-  -webkit-transition: 0.3s 0.3s;
-  transition: 0.3s 0.3s;
-}
-
-.race:active {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
 }
 
 .race__round {
@@ -324,7 +315,18 @@ html {
 }
 
 .pass {
-  opacity: 0.3 !important;
+  opacity: 0.7 !important;
+  -webkit-transition: 0.3s 0.3s;
+  transition: 0.3s 0.3s;
+  background-color: #1a1a1d;
+  border: 1px solid #35343d;
+}
+
+.pass:active {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 .modal {
@@ -457,6 +459,12 @@ html {
   }
   .pass {
     cursor: pointer;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  .pass:hover {
+    opacity: 1 !important;
+    background-color: #24232a;
   }
 }
 

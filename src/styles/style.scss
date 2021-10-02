@@ -235,12 +235,6 @@ html {
     border-radius: 10px;
     font-size: 14px;
     animation: 0.6s fadeIn forwards;
-    transition: 0.3s 0.3s;
-
-    &:active {
-        transition: 0.3s;
-        transform: scale(0.9);
-    }
 
     &__round {
         grid-area: round;
@@ -262,7 +256,15 @@ html {
 }
 
 .pass {
-    opacity: 0.3 !important;
+    opacity: 0.7 !important;
+    transition: 0.3s 0.3s;
+    background-color: $bg;
+    border: 1px solid #35343d;
+
+    &:active {
+        transition: 0.3s;
+        transform: scale(0.9);
+    }
 }
 
 .modal {
@@ -380,6 +382,12 @@ html {
 
     .pass {
         cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+            opacity: 1 !important;
+            background-color: $dl;
+        }
     }
 }
 
