@@ -23,8 +23,8 @@ html {
   max-width: 600px;
   margin: 0 auto;
   letter-spacing: 0.3px;
-  background-color: #1a1a1d;
-  color: #eceef5;
+  background-color: #f8fafc;
+  color: #1e293b;
 }
 
 .header {
@@ -50,8 +50,8 @@ html {
   font-weight: 400;
   opacity: 0.6;
   font-size: 14px;
-  -webkit-columns: #bbbbbb;
-          columns: #bbbbbb;
+  -webkit-columns: #64748b;
+          columns: #64748b;
 }
 
 .next {
@@ -69,7 +69,7 @@ html {
 }
 
 .next__title {
-  color: #bbbbbb;
+  color: #64748b;
   font-size: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -89,10 +89,10 @@ html {
 .next__card {
   margin-top: 20px;
   padding: 20px;
-  border: 2px solid #24232a;
-  color: #eceef5;
+  border: 2px solid #f1f5f9;
+  color: #1e293b;
   border-radius: 10px;
-  background: #24232a;
+  background: #f1f5f9;
 }
 
 .next__name {
@@ -102,7 +102,7 @@ html {
 .next__date {
   font-size: 14px;
   font-weight: 400;
-  color: #feb95a;
+  color: #f43f5e;
 }
 
 .list {
@@ -120,7 +120,7 @@ html {
 
 .standings__title {
   font-size: 14px;
-  color: #bbbbbb;
+  color: #64748b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -156,7 +156,7 @@ html {
 .standings__type {
   justify-self: center;
   font-size: 14px;
-  color: #bbbbbb;
+  color: #64748b;
   padding: 10px 20px;
   border-radius: 15px;
   text-align: center;
@@ -168,12 +168,12 @@ html {
           align-items: center;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
-  background-color: #1a1a1d;
+  background-color: #f8fafc;
 }
 
 .standings__type--active {
-  background-color: #24232a;
-  color: #feb95a;
+  background-color: #f1f5f9;
+  color: #f43f5e;
 }
 
 .item {
@@ -182,8 +182,9 @@ html {
   display: grid;
   -ms-grid-columns: 0fr 0.8fr 0.2fr;
       grid-template-columns: 0fr 0.8fr 0.2fr;
-      grid-template-areas: 'position name points' 'extended extended points';
-  background: #24232a;
+      grid-template-areas: 'position name points'
+ 'extended extended points';
+  background: #f1f5f9;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -196,7 +197,7 @@ html {
 
 .item__position {
   margin-right: 20px;
-  color: #bbbbbb;
+  color: #64748b;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: position;
@@ -204,7 +205,7 @@ html {
 
 .item__points {
       justify-self: end;
-  color: #bbbbbb;
+  color: #64748b;
   -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: points;
@@ -253,7 +254,7 @@ html {
 }
 
 .schedule__title {
-  color: #bbbbbb;
+  color: #64748b;
   font-size: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -278,8 +279,9 @@ html {
   display: grid;
   -ms-grid-columns: 0fr 0.6fr 0.4fr;
       grid-template-columns: 0fr 0.6fr 0.4fr;
-      grid-template-areas: 'round name date' 'extended extended extended';
-  background-color: #24232a;
+      grid-template-areas: 'round name date'
+ 'extended extended extended';
+  background-color: #f1f5f9;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -294,7 +296,7 @@ html {
   -ms-grid-column: 1;
   grid-area: round;
   margin-right: 20px;
-  color: #bbbbbb;
+  color: #64748b;
 }
 
 .race__name {
@@ -311,14 +313,14 @@ html {
   grid-area: date;
   -ms-grid-column-align: end;
       justify-self: end;
-  color: #bbbbbb;
+  color: #64748b;
 }
 
 .pass {
   opacity: 0.7 !important;
   -webkit-transition: 0.3s 0.3s;
   transition: 0.3s 0.3s;
-  background-color: #1a1a1d;
+  background-color: #f8fafc;
   border: 1px solid #35343d;
 }
 
@@ -339,11 +341,11 @@ html {
   width: calc(100% - 40px);
   height: calc(100% - 40px);
   padding: 20px;
-  background-color: #1a1a1d;
+  background-color: #f8fafc;
   overflow: auto;
   font-size: 12px;
   max-width: 600px;
-  color: #eceef5;
+  color: #1e293b;
 }
 
 .modal::-webkit-scrollbar {
@@ -352,7 +354,7 @@ html {
 
 .modalItem {
   width: calc(100% - 40px);
-  background-color: #24232a;
+  background-color: #f1f5f9;
   padding: 10px 20px;
   margin: 10px 0;
   display: -ms-grid;
@@ -363,7 +365,9 @@ html {
           align-items: center;
   -ms-grid-columns: 0fr 0.7fr 0.3fr;
       grid-template-columns: 0fr 0.7fr 0.3fr;
-      grid-template-areas: 'position name time' 'avg avg points' 'lap lap gr';
+      grid-template-areas: 'position name time'
+ 'avg avg points'
+ 'lap lap gr';
 }
 
 .modalItem__position {
@@ -371,7 +375,7 @@ html {
   -ms-grid-column: 1;
   grid-area: position;
   font-size: 14px;
-  color: #bbbbbb;
+  color: #64748b;
   margin-right: 20px;
 }
 
@@ -387,7 +391,7 @@ html {
   -ms-grid-column: 3;
   grid-area: time;
   font-size: 14px;
-  color: #bbbbbb;
+  color: #64748b;
   -ms-grid-column-align: end;
       justify-self: end;
 }
@@ -468,7 +472,7 @@ html {
   }
   .pass:hover {
     opacity: 1 !important;
-    background-color: #24232a;
+    background-color: #e2e8f0;
   }
 }
 

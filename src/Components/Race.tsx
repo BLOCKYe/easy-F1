@@ -29,7 +29,7 @@ export const Race: React.FC<Props> = (props) => {
     };
 
     const showMore = () => {
-        fetch(`https://ergast.com/api/f1/2021/${props.round}/results.json`)
+        fetch(`https://ergast.com/api/f1/2022/${props.round}/results.json`)
             .then((response) => response.json())
             .then((result) => {
                 setresults(result.MRData.RaceTable.Races[0].Results);
